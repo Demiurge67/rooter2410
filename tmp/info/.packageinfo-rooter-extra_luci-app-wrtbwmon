@@ -1,0 +1,20 @@
+Source-Makefile: package/rooter-extra/luci-app-wrtbwmon/Makefile
+
+Package: luci-app-wrtbwmon
+Submenu: Optional Applications
+Version: 4.500-r1
+Depends: +libc +wrtbwmon
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: ROOter
+Repository: base
+Title: A Luci module that uses wrtbwmon to track bandwidth usage
+Maintainer: Created by DM/makefile by Cobia@whirlpool
+Source: 
+Type: ipkg
+Description:   A Luci module that uses wrtbwmon to track bandwidth usage
+@@
+
+

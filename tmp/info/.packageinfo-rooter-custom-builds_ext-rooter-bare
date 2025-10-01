@@ -1,0 +1,19 @@
+Source-Makefile: package/rooter-custom-builds/ext-rooter-bare/Makefile
+
+Package: ext-rooter-bare
+Version: 1.000-r1
+Depends: +libc +luci +ext-rooter-basic +pingtest +ext-logo +luci-app-rootervpn +ext-wireguard +bwmon +464xlat +webconsole +ext-theme +luci-theme-argon +ext-login +ca-bundle +ca-certificates +arc-storage +ext-command +ext-speedtest +openvpn-easy-rsa +openvpn-openssl +ext-extra +luci-app-hotspot +luci-app-guestwifi +usbmuxd +libusbmuxd-utils +libimobiledevice-utils +kmod-usb-net-ipheth +qlog +luci-ssl +usbutils +openssl-util +ethtool +ext-splashconfig +nano +picocom +wget +qfirehose +luci-app-vpnbypass +ext-zerotier
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: ROOter
+Repository: base
+Title: ROOter support w/o MWan3 for 16meg and larger routers
+Maintainer: Created by DM/makefile by Cobia@whirlpool
+Source: 
+Type: ipkg
+Description:   Helper scripts to enable ROOter w/o MWan3 on 16meg and larger routers
+@@
+
+

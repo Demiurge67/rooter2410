@@ -1,0 +1,20 @@
+Source-Makefile: package/rooter-extra/basic-zerotier/Makefile
+
+Package: basic-zerotier
+Submenu: Optional Applications
+Version: 4.500-r1
+Depends: +libc +zerotier +extramenu
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: ROOter
+Repository: base
+Title: Install scripts for Basic Zerotier
+Maintainer: Created by DM/makefile by Cobia@whirlpool
+Source: 
+Type: ipkg
+Description:   Install scripts for Basic Zerotier
+@@
+
+

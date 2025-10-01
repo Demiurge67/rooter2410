@@ -1,0 +1,19 @@
+Source-Makefile: package/rooter/bonding/ext-linka/Makefile
+
+Package: ext-linka
+Version: 1.000-r1
+Depends: +libc +luci +ext-rooter-basic +build-admin +pingtest +kmod-bonding +extramenu +ext-blockport +ext-domain +ext-blacklist +bwmon +464xlat +webconsole +ext-theme +luci-theme-argon +ext-login +ca-bundle +ca-certificates +arc-storage +luci-app-sqm +kmod-sched-cake +luci-app-nft-qos +ext-command +ext-speedtest +openvpn-openssl +ext-extra +luci-app-hotspot +usbmuxd +libusbmuxd-utils +libimobiledevice-utils +kmod-usb-net-ipheth +luci-ssl +usbutils +openssl-util +wget +coreutils-base64
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: ROOter
+Repository: base
+Title: ROOter support for World routers
+Maintainer: Created by DM/makefile by Cobia@whirlpool
+Source: 
+Type: ipkg
+Description:   Helper scripts to enable support for World routers
+@@
+
+

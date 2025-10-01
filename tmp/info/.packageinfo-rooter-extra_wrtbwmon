@@ -1,0 +1,21 @@
+Source-Makefile: package/rooter-extra/wrtbwmon/Makefile
+
+Package: wrtbwmon
+Submenu: Optional Applications
+Version: 1.2.1-r3
+Depends: +libc +iptables +@BUSYBOX_CONFIG_IP
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: ROOter
+Repository: base
+Title: A Traffic Usage Monitor
+Maintainer: 
+Source: 
+Type: ipkg
+Description: An CERNET client daemon,
+Most usually used in China collages.
+@@
+
+

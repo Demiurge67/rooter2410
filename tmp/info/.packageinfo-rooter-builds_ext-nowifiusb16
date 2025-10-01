@@ -1,0 +1,19 @@
+Source-Makefile: package/rooter-builds/ext-nowifiusb16/Makefile
+
+Package: ext-nowifiusb16
+Version: 1.000-r1
+Depends: +libc +ext-nowifiusb +luci-app-mwan3 +luci-app-dnsmasq-ipset
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: ROOter
+Repository: base
+Title: ROOter support for 16meg and larger routers
+Maintainer: Created by DM/makefile by Cobia@whirlpool
+Source: 
+Type: ipkg
+Description:   Helper scripts to enable ROOter on 16meg and larger routers
+@@
+
+

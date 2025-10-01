@@ -1,0 +1,21 @@
+Source-Makefile: package/rooter-extra/speedtestpp1/Makefile
+
+Package: speedtestpp
+Version: 1.14-r0
+Depends: +libc +libcurl +libxml2 +libopenssl +libstdcpp +BUILD_NLS:libiconv-full
+Conflicts: python3-speedtest-cli
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: speedtest++
+Maintainer: Oskari Rauta <oskari.rauta@gmail.com>
+Source: speedtestpp-1.14.tar.zst
+License: MIT
+URL: https://github.com/taganaka/SpeedTest
+Type: ipkg
+Description:   Yet another unofficial speedtest.net client cli interface
+@@
+
+

@@ -1,0 +1,21 @@
+Source-Makefile: package/firmware/layerscape/ls-ddr-phy/Makefile
+Build-Depends: tfa-layerscape/host
+
+Package: layerscape-ddr-phy
+Version: 6.6.3.1.0.0-r1
+Depends: +libc @TARGET_layerscape
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: firmware
+Category: Firmware
+Title: NXP Layerscape DDR PHY firmware
+Maintainer: 
+Source: ls-ddr-phy-6.6.3.1.0.0.tar.zst
+License: EULA
+LicenseFiles: NXP-Binary-EULA.txt
+Type: ipkg
+Description: NXP Layerscape DDR PHY firmware
+@@
+
+

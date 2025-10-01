@@ -1,0 +1,19 @@
+Source-Makefile: package/rooter-builds/ext-rooter-rasppi16/Makefile
+
+Package: ext-rooter-rasppi16
+Version: 1.000-r1
+Depends: +libc +ext-rooter-rasppi +luci-app-mwan3 +luci-app-dnsmasq-ipset +ext-multimodem
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: ROOter
+Repository: base
+Title: ROOter support for 16meg and larger routers
+Maintainer: Created by DM/makefile by Cobia@whirlpool
+Source: 
+Type: ipkg
+Description:   Helper scripts to enable ROOter on 16meg and larger routers
+@@
+
+

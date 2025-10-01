@@ -1,0 +1,19 @@
+Source-Makefile: package/rooter-extra/gl-uart/Makefile
+
+Package: gl-uart
+Version: 3.0.9-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: gl-inet
+Repository: base
+Title: GL iNet QCA9563 and MCU 
+Maintainer: 
+Source: 
+Type: ipkg
+Description: VPN daemon for gl-inet.
+@@
+
+

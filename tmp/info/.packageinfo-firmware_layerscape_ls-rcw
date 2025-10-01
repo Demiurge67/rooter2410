@@ -1,0 +1,18 @@
+Source-Makefile: package/firmware/layerscape/ls-rcw/Makefile
+
+Package: layerscape-rcw
+Version: 6.6.23.2.0.0-r1
+Depends: +libc @TARGET_layerscape
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: firmware
+Category: Firmware
+Title: NXP Layerscape RCW binaries
+Maintainer: 
+Source: ls-rcw-6.6.23.2.0.0.tar.zst
+Type: ipkg
+Description: NXP Layerscape RCW binaries
+@@
+
+

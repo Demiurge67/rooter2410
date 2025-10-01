@@ -1,0 +1,20 @@
+Source-Makefile: package/rooter/0routerspecfic/z2105/Makefile
+
+Package: z2105
+Submenu: Router Specific
+Version: 1.000-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: ROOter
+Repository: base
+Title: Install scripts for z2105
+Maintainer: Created by DM/makefile by Cobia@whirlpool
+Source: 
+Type: ipkg
+Description:   Helper scripts to install scripts for z2105
+@@
+
+

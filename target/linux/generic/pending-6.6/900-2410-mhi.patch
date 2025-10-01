@@ -1,0 +1,92 @@
+--- a/drivers/bus/mhi/host/pci_generic.c
++++ b/drivers/bus/mhi/host/pci_generic.c
+@@ -247,6 +247,8 @@
+ 	MHI_CHANNEL_CONFIG_UL(14, "QMI", 4, 0),
+ 	MHI_CHANNEL_CONFIG_DL(15, "QMI", 4, 0),
+ 	MHI_CHANNEL_CONFIG_UL(20, "IPCR", 8, 0),
++	MHI_CHANNEL_CONFIG_UL(32, "DUN", 32, 0),
++	MHI_CHANNEL_CONFIG_DL(33, "DUN", 32, 0),
+ 	MHI_CHANNEL_CONFIG_DL_AUTOQUEUE(21, "IPCR", 8, 0),
+ 	MHI_CHANNEL_CONFIG_UL_FP(34, "FIREHOSE", 32, 0),
+ 	MHI_CHANNEL_CONFIG_DL_FP(35, "FIREHOSE", 32, 0),
+@@ -342,8 +344,8 @@
+ 	/* The EDL firmware is a flash-programmer exposing firehose protocol */
+ 	MHI_CHANNEL_CONFIG_UL_FP(34, "FIREHOSE", 32, 0),
+ 	MHI_CHANNEL_CONFIG_DL_FP(35, "FIREHOSE", 32, 0),
+-	MHI_CHANNEL_CONFIG_HW_UL(100, "IP_HW0_MBIM", 128, 2),
+-	MHI_CHANNEL_CONFIG_HW_DL(101, "IP_HW0_MBIM", 128, 3),
++	MHI_CHANNEL_CONFIG_HW_UL(100, "IP_HW0", 128, 2),
++	MHI_CHANNEL_CONFIG_HW_DL(101, "IP_HW0", 128, 3),
+ };
+ 
+ static struct mhi_event_config mhi_quectel_em1xx_events[] = {
+@@ -391,8 +393,8 @@
+ 	MHI_CHANNEL_CONFIG_DL(13, "MBIM", 32, 0),
+ 	MHI_CHANNEL_CONFIG_UL(32, "DUN", 32, 0),
+ 	MHI_CHANNEL_CONFIG_DL(33, "DUN", 32, 0),
+-	MHI_CHANNEL_CONFIG_HW_UL(100, "IP_HW0_MBIM", 128, 2),
+-	MHI_CHANNEL_CONFIG_HW_DL(101, "IP_HW0_MBIM", 128, 3),
++	MHI_CHANNEL_CONFIG_HW_UL(100, "IP_HW0", 128, 2),
++	MHI_CHANNEL_CONFIG_HW_DL(101, "IP_HW0", 128, 3),
+ };
+ 
+ static struct mhi_event_config mhi_foxconn_sdx55_events[] = {
+@@ -449,6 +451,10 @@
+ 	/* MBIM Data Channel */
+ 	MHI_CHANNEL_CONFIG_HW_UL(100, "IP_HW0_MBIM", 512, 2),
+ 	MHI_CHANNEL_CONFIG_HW_DL(101, "IP_HW0_MBIM", 512, 3),
++	MHI_CHANNEL_CONFIG_UL(32, "DUN", 32, 0),
++	MHI_CHANNEL_CONFIG_DL(33, "DUN", 32, 0),
++	MHI_CHANNEL_CONFIG_UL(92, "DUN2", 32, 1),
++	MHI_CHANNEL_CONFIG_DL(93, "DUN2", 32, 1),
+ };
+ 
+ static struct mhi_event_config mhi_mv3x_events[] = {
+@@ -569,8 +575,8 @@
+ 	MHI_CHANNEL_CONFIG_DL(33, "DUN", 32, 0),
+ 	MHI_CHANNEL_CONFIG_UL(92, "DUN2", 32, 1),
+ 	MHI_CHANNEL_CONFIG_DL(93, "DUN2", 32, 1),
+-	MHI_CHANNEL_CONFIG_HW_UL(100, "IP_HW0_MBIM", 128, 2),
+-	MHI_CHANNEL_CONFIG_HW_DL(101, "IP_HW0_MBIM", 128, 3),
++	MHI_CHANNEL_CONFIG_HW_UL(100, "IP_HW0", 128, 2),
++	MHI_CHANNEL_CONFIG_HW_DL(101, "IP_HW0", 128, 3),
+ };
+ 
+ static struct mhi_event_config mhi_telit_fn990_events[] = {
+@@ -613,6 +619,18 @@
+ 		.driver_data = (kernel_ulong_t) &mhi_qcom_sdx24_info },
+ 	{ PCI_DEVICE_SUB(PCI_VENDOR_ID_QCOM, 0x0306, PCI_VENDOR_ID_QCOM, 0x010c),
+ 		.driver_data = (kernel_ulong_t) &mhi_foxconn_sdx55_info },
++	/* RM520N-GL variant with Qualcomm vendor and subvendor ID */
++	{ PCI_DEVICE_SUB(PCI_VENDOR_ID_QCOM, 0x0308, PCI_VENDOR_ID_QCOM, 0x5201),
++		.driver_data = (kernel_ulong_t) &mhi_quectel_rm5xx_info },
++	/* RM520N-GL AA */
++	{ PCI_DEVICE_SUB(PCI_VENDOR_ID_QCOM, 0x0308, PCI_VENDOR_ID_QCOM, 0x5201),
++		.driver_data = (kernel_ulong_t) &mhi_qcom_sdx65_info },
++	/* RM520N-GL AP */
++	{ PCI_DEVICE_SUB(PCI_VENDOR_ID_QCOM, 0x0308, PCI_VENDOR_ID_QCOM, 0x0308),
++		.driver_data = (kernel_ulong_t) &mhi_quectel_rm5xx_info },
++	/* RM551 */
++	{ PCI_DEVICE_SUB(PCI_VENDOR_ID_QCOM, 0x0309, PCI_VENDOR_ID_QCOM, 0x0309),
++		.driver_data = (kernel_ulong_t) &mhi_qcom_sdx75_info },
+ 	/* EM919x (sdx55), use the same vid:pid as qcom-sdx55m */
+ 	{ PCI_DEVICE_SUB(PCI_VENDOR_ID_QCOM, 0x0306, 0x18d7, 0x0200),
+ 		.driver_data = (kernel_ulong_t) &mhi_sierra_em919x_info },
+@@ -693,6 +711,8 @@
+ 	/* MV32-WB (Cinterion) */
+ 	{ PCI_DEVICE(PCI_VENDOR_ID_THALES, 0x00bb),
+ 		.driver_data = (kernel_ulong_t) &mhi_mv32_info },
++	{ PCI_DEVICE(PCI_VENDOR_ID_FOXCONN, 0xe0af),
++		.driver_data = (kernel_ulong_t) &mhi_foxconn_sdx55_info },
+ 	/* T99W175 (sdx55), HP variant */
+ 	{ PCI_DEVICE(0x03f0, 0x0a6c),
+ 		.driver_data = (kernel_ulong_t) &mhi_foxconn_sdx55_info },
+@@ -901,7 +921,7 @@
+ 	if (err)
+ 		goto err_try_reset;
+ 
+-	err = mhi_sync_power_up(mhi_cntrl);
++	err = mhi_async_power_up(mhi_cntrl);
+ 	if (err)
+ 		goto err_unprepare;
+ 
