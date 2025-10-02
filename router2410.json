@@ -134,5 +134,37 @@
 		"imagepath": "/x86/64/",
 		"mod": "x86-64",
 		"addons": ["readme.pdf"]
+	},
+	"AXT1800": {
+		"details": "Gl.iNet AXT1800",
+		"type": "2",
+		"build": "2305",
+		"config": ".config_axt1800",
+		"image1": "openwrt-qualcommax-ipq60xx-glinet_gl-axt1800-squashfs-sysupgrade.bin",
+		"image2": "openwrt-qualcommax-ipq60xx-glinet_gl-axt1800-squashfs-factory.ubi",
+		"imagepath": "/qualcommax/ipq60xx/",
+		"mod": "GL-iNet-AXT1800",
+		"ext1": "-upgrade.bin",
+		"ext2": "-factory.ubi",
+		"addons": ["axt1800.txt"],
+		"custom": {
+			"files": "/axt1800/files/"	
+		}
+	},
+	"AX1800": {
+		"details": "Gl.iNet AX1800",
+		"type": "2",
+		"build": "2305",
+		"config": ".config_ax1800",
+		"image1": "openwrt-qualcommax-ipq60xx-glinet_gl-ax1800-squashfs-sysupgrade.bin",
+		"image2": "openwrt-qualcommax-ipq60xx-glinet_gl-ax1800-squashfs-factory.ubi",
+		"imagepath": "/qualcommax/ipq60xx/",
+		"mod": "GL-iNet-AX1800",
+		"ext1": "-upgrade.bin",
+		"ext2": "-factory.ubi",
+		"addons": ["axt1800.txt"],
+		"custom": {
+			"files": "/axt1800/files/"	
+		}
 	}
 }
