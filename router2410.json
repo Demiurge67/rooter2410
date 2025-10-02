@@ -16,6 +16,24 @@
 		"ext2": "-squashfs.img",
 		"addons": ["readme.pdf"]
 	},
+	"RASPPI5USB": {
+		"details": "Raspberry Pi 5 USB",
+		"type": "3",
+		"build": "2102",
+		"package": "ext-rooter-rasppi",
+		"config": ".config_rasppi5",
+		"prescript": "/target/linux/bcm27xx/image/sdcard.sh usb",
+		"postscript": "/target/linux/bcm27xx/image/sdcard.sh sd",
+		"image1": "openwrt-bcm27xx-bcm2712-rpi-5-ext4-factory.img.gz",
+		"image2": "openwrt-bcm27xx-bcm2712-rpi-5-ext4-factory.img",
+		"image3": "openwrt-bcm27xx-bcm2712-rpi-5-squashfs-sysupgrade.img.gz",
+		"image4": "openwrt-bcm27xx-bcm2712-rpi-5-squashfs-sysupgrade.img",
+		"imagepath": "/bcm27xx/bcm2712/",
+		"mod": "RaspberryPi-5-USB",
+		"ext1": "-ext4.img",
+		"ext2": "-squashfs.img",
+		"addons": ["readme.pdf"]
+	},
 	"X3000": {
 		"details": "Gl.iNet X3000",
 		"type": "1",
@@ -166,5 +184,29 @@
 		"custom": {
 			"files": "/axt1800/files/"	
 		}
+	},
+	"WG156": {
+		"details": "ZBT WG156",
+		"type": "1",
+		"build": "2102",
+		"config": ".config_wg156",
+		"image": "openwrt-ipq40xx-generic-yyets_le1-squashfs-sysupgrade.bin",	
+		"imagepath": "/ipq40xx/generic/",
+		"mod": "ZBT_WG156",
+		"ext": "-upgrade.bin",
+		"addons": ["readme.pdf", "flash-wg156.pdf", "firmware.bin", "kernel.bin", "flash", "putty-64bit-0.80-installer.msi", "WinSCP-6.3.2-Setup.exe"]
+	},
+	"LBR20": {
+		"details": "Netgear LBR20",
+		"type": "2",
+		"build": "2102",
+		"config": ".config_lbr20",
+		"image1": "openwrt-ipq40xx-generic-netgear_lbr20-squashfs-sysupgrade.bin",	
+		"image2": "openwrt-ipq40xx-generic-netgear_lbr20-squashfs-factory.img",
+		"imagepath": "/ipq40xx/generic/",
+		"mod": "Netgear-LBR20",
+		"ext1": "-upgrade.bin",
+		"ext2": "-factory.img",
+		"addons": ["readme.pdf"]
 	}
 }
