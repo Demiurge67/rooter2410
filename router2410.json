@@ -91,5 +91,48 @@
 			},
 			"files": "/huasifei/files1698/"	
 		}
+	},
+	"BPI4": {
+		"details": "Banana Pi4",
+		"type": "2",
+		"build": "2305",
+		"config": ".config_bpi4",
+		"image1": "openwrt-mediatek-filogic-bananapi_bpi-r4-squashfs-sysupgrade.itb",
+		"image2": "openwrt-mediatek-filogic-bananapi_bpi-r4-sdcard.img.gz",
+		"imagepath": "/mediatek/filogic/",
+		"mod": "Banana-Pi-R4",
+		"ext1": "-upgrade.itb",
+		"ext2": "-sdcard.img.gz"
+	},
+	"BPI4POE": {
+		"details": "Banana Pi4 POE",
+		"type": "2",
+		"build": "2305",
+		"config": ".config_bpi4poe",
+		"image1": "openwrt-mediatek-filogic-bananapi_bpi-r4-poe-squashfs-sysupgrade.itb",
+		"image2": "openwrt-mediatek-filogic-bananapi_bpi-r4-poe-sdcard.img.gz",
+		"imagepath": "/mediatek/filogic/",
+		"mod": "Banana-Pi-R4-2.5GBPS",
+		"ext1": "-upgrade.itb",
+		"ext2": "-sdcard.img.gz"
+	},
+	"X86-64": {
+		"details": "Generic x86 64 bit",
+		"type": "5",
+		"build": "2203",
+		"config": ".config_x86-64",
+		"image1": "openwrt-x86-64-generic-ext4-combined.img.gz",
+		"image2": "openwrt-x86-64-generic-ext4-combined.img",
+		"image3": "openwrt-x86-64-generic-ext4-combined-efi.img.gz",
+		"image4": "openwrt-x86-64-generic-ext4-combined-efi.img",
+		"image5": "openwrt-x86-64-generic-kernel.bin",
+		"image6": "openwrt-x86-64-generic-rootfs.tar.gz",
+		"image7": "openwrt-x86-64-generic.manifest",
+		"image8": "packages",
+		"image9": "sha256sums",
+		"image10": "*.buildinfo",
+		"imagepath": "/x86/64/",
+		"mod": "x86-64",
+		"addons": ["readme.pdf"]
 	}
 }
