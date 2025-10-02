@@ -208,5 +208,53 @@
 		"ext1": "-upgrade.bin",
 		"ext2": "-factory.img",
 		"addons": ["readme.pdf"]
+	},
+	"AW1000": {
+		"details": "Arcadyan AW1000",
+		"type": "2",
+		"build": "2305",
+		"config": ".config_aw1000",
+		"image1": "openwrt-qualcommax-ipq807x-arcadyan_aw1000-squashfs-sysupgrade.bin",	
+		"image2": "openwrt-qualcommax-ipq807x-arcadyan_aw1000-squashfs-factory.ubi",
+		"imagepath": "/qualcommax/ipq807x/",
+		"mod": "Arcadyan-AW1000",
+		"ext1": "-upgrade.bin",
+		"ext2": "-factory.ubi",
+		"addons": ["readme.pdf"]
+	},
+	"RASPPI4": {
+		"details": "Raspberry Pi 4 SD",
+		"type": "3",
+		"build": "2102",
+		"package": "ext-rooter-rasppi",
+		"config": ".config_rasppi4",
+		"prescript": "/target/linux/bcm27xx/image/sdcard.sh sd",
+		"image1": "openwrt-bcm27xx-bcm2711-rpi-4-ext4-factory.img.gz",
+		"image2": "openwrt-bcm27xx-bcm2711-rpi-4-ext4-factory.img",
+		"image3": "openwrt-bcm27xx-bcm2711-rpi-4-squashfs-sysupgrade.img.gz",
+		"image4": "openwrt-bcm27xx-bcm2711-rpi-4-squashfs-sysupgrade.img",
+		"imagepath": "/bcm27xx/bcm2711/",
+		"mod": "RaspberryPi-4-SD",
+		"ext1": "-ext4.img",
+		"ext2": "-squashfs.img",
+		"addons": ["readme.pdf"]
+	},
+	"RASPPI4USB": {
+		"details": "Raspberry Pi 4 USB",
+		"type": "3",
+		"build": "2102",
+		"package": "ext-rooter-rasppi",
+		"config": ".config_rasppi4",
+		"prescript": "/target/linux/bcm27xx/image/sdcard.sh usb",
+		"postscript": "/target/linux/bcm27xx/image/sdcard.sh sd",
+		"image1": "openwrt-bcm27xx-bcm2711-rpi-4-ext4-factory.img.gz",
+		"image2": "openwrt-bcm27xx-bcm2711-rpi-4-ext4-factory.img",
+		"image3": "openwrt-bcm27xx-bcm2711-rpi-4-squashfs-sysupgrade.img.gz",
+		"image4": "openwrt-bcm27xx-bcm2711-rpi-4-squashfs-sysupgrade.img",
+		"imagepath": "/bcm27xx/bcm2711/",
+		"mod": "RaspberryPi-4-USB",
+		"ext1": "-ext4.img",
+		"ext2": "-squashfs.img",
+		"addons": ["readme.pdf"]
 	}
 }
