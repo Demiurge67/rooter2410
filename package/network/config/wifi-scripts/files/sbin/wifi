@@ -73,37 +73,42 @@ wifi_config() {
 		if [ -z "$channel" ]; then
 			break
 		fi
-
-		if [ -e /etc/customwifi ]; then
-			I=0
-			while IFS=$'\n' read -r line
-			do
-				if [ $I = 0 ];then
-					SSID="$line"
-					I=1
-				else
-					if [ $I = 1 ];then
-						SSID5G="$line"
-						I=2
+		if [ ! -e /etc/wifiset ]; then
+			if [ -e /etc/customwifi ]; then
+				I=0
+				while IFS=$'\n' read -r line
+				do
+					if [ $I = 0 ];then
+						SSID="$line"
+						I=1
 					else
-						PASSW="$line"
-						break
+						if [ $I = 1 ];then
+							SSID5G="$line"
+							I=2
+						else
+							PASSW="$line"
+							break
+						fi
 					fi
-				fi
 
-			done < /etc/customwifi
+				done < /etc/customwifi
+			else
+				SSID="ROOter"
+				SSID5G="ROOter 5G"
+				PASSW="rooter2017"
+			fi
+			if [ "$channel" -lt 20 ]; then
+				SSID="$SSID"
+			else
+				SSID="$SSID5G"
+			fi
+			if [ "$channel" = 36 ]; then
+				channel=44
+			fi
+			echo "0" > /etc/wifiset
 		else
-			SSID="ROOter"
-			SSID5G="ROOter 5G"
-			PASSW="rooter2017"
-		fi
-		if [ "$channel" -lt 20 ]; then
-			SSID="$SSID"
-		else
-			SSID="$SSID5G"
-		fi
-		if [ "$channel" = 36 ]; then
-			channel=44
+			channel=$(uci -q get wireless.radio$radnum.channel)
+			SSID=$(uci -q get wireless.default_radio$radnum.ssid)
 		fi
 		
 		uci set wireless.radio$radnum.channel="$channel"

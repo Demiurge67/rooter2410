@@ -67,6 +67,18 @@
 		"ext1": "-upgrade.bin",
 		"ext2": "-upgrade.bin"
 	},
+	"Z800": {
+		"details": "ZBT Z800AX",
+		"type": "2",
+		"build": "2305",
+		"config": ".config_z800",
+		"image1": "openwrt-qualcommax-ipq807x-zbtlink_zbt-z800ax-squashfs-sysupgrade.bin",
+		"image2": "openwrt-qualcommax-ipq807x-zbtlink_zbt-z800ax-squashfs-factory.bin",
+		"imagepath": "/qualcommax/ipq807x/",
+		"mod": "ZBT-Z800AX",
+		"ext1": "-upgrade.bin",
+		"ext2": "-factory.bin"
+	},
 	"WS1698": {
 		"details": "Huasifei WS1698AX",
 		"type": "1",
@@ -246,6 +258,73 @@
 		"ext2": "-factory.ubi",
 		"addons": ["readme.pdf"]
 	},
+	"RASPPI": {
+		"details": "Raspberry Pi",
+		"type": "3",
+		"build": "2102",
+		"package": "ext-rooter-rasppi",
+		"config": ".config_rasppi",
+		"image1": "openwrt-bcm27xx-bcm2708-rpi-ext4-factory.img.gz",
+		"image2": "openwrt-bcm27xx-bcm2708-rpi-ext4-factory.img",
+		"image3": "openwrt-bcm27xx-bcm2708-rpi-ext4-sysupgrade.img.gz",
+		"image4": "openwrt-bcm27xx-bcm2708-rpi-ext4-sysupgrade.img",
+		"imagepath": "/bcm27xx/bcm2708/",
+		"mod": "RaspberryPi-1",
+		"ext1": "-factory.img",
+		"ext2": "-sysupgrade.img",
+		"addons": ["readme.pdf", "readmeSD.txt"]
+	},
+	"RASPPI2": {
+		"details": "Raspberry Pi 2",
+		"type": "3",
+		"build": "2102",
+		"package": "ext-rooter-rasppi",
+		"config": ".config_rasppi2",
+		"image1": "openwrt-bcm27xx-bcm2709-rpi-2-ext4-factory.img.gz",
+		"image2": "openwrt-bcm27xx-bcm2709-rpi-2-ext4-factory.img",
+		"image3": "openwrt-bcm27xx-bcm2709-rpi-2-ext4-sysupgrade.img.gz",
+		"image4": "openwrt-bcm27xx-bcm2709-rpi-2-ext4-sysupgrade.img",
+		"imagepath": "/bcm27xx/bcm2709/",
+		"mod": "RaspberryPi-2",
+		"ext1": "-factory.img",
+		"ext2": "-sysupgrade.img",
+		"addons": ["readme.pdf", "readmeSD.txt"]
+	},
+	"RASPPI3": {
+		"details": "Raspberry Pi 3 SD",
+		"type": "3",
+		"build": "2102",
+		"package": "ext-rooter-rasppi",
+		"config": ".config_rasppi3",
+		"prescript": "/target/linux/bcm27xx/image/sdcard.sh sd",
+		"image1": "openwrt-bcm27xx-bcm2710-rpi-3-ext4-sysupgrade.img.gz",
+		"image2": "openwrt-bcm27xx-bcm2710-rpi-3-ext4-sysupgrade.img",
+		"image3": "openwrt-bcm27xx-bcm2710-rpi-3-squashfs-sysupgrade.img.gz",
+		"image4": "openwrt-bcm27xx-bcm2710-rpi-3-squashfs-sysupgrade.img",
+		"imagepath": "/bcm27xx/bcm2710/", 
+		"mod": "RaspberryPi-3-SD",
+		"ext1": "-ext4.img",
+		"ext2": "-squashfs.img",
+		"addons": ["readme.pdf", "readmeSD.txt"]
+	},
+	"RASPPI3USB": {
+		"details": "Raspberry Pi 3 USB",
+		"type": "3",
+		"build": "2102",
+		"package": "ext-rooter-rasppi",
+		"config": ".config_rasppi3",
+		"prescript": "/target/linux/bcm27xx/image/sdcard.sh usb",
+		"postscript": "/target/linux/bcm27xx/image/sdcard.sh sd",
+		"image1": "openwrt-bcm27xx-bcm2710-rpi-3-ext4-sysupgrade.img.gz",
+		"image2": "openwrt-bcm27xx-bcm2710-rpi-3-ext4-sysupgrade.img",
+		"image3": "openwrt-bcm27xx-bcm2710-rpi-3-squashfs-sysupgrade.img.gz",
+		"image4": "openwrt-bcm27xx-bcm2710-rpi-3-squashfs-sysupgrade.img",
+		"imagepath": "/bcm27xx/bcm2710/", 
+		"mod": "RaspberryPi-3-USB",
+		"ext1": "-ext4.img",
+		"ext2": "-squashfs.img",
+		"addons": ["readme.pdf", "readmeSD.txt"]
+	},
 	"RASPPI4": {
 		"details": "Raspberry Pi 4 SD",
 		"type": "3",
@@ -328,5 +407,18 @@
 		"ext1": "-upgrade.bin",
 		"ext2": "-initramfs-kernel.bin",
 		"addons": ["readme.pdf", "cudy_tr3000-v1-sysupgrade.bin"]
+	},
+	"MIR3P": {
+		"details": "Xiaomi MIR3P",
+		"type": "2",
+		"build": "2203",
+		"config": ".config_mir3p",
+		"image1": "openwrt-ramips-mt7621-xiaomi_mi-router-3-pro-squashfs-factory.bin",
+		"image2": "openwrt-ramips-mt7621-xiaomi_mi-router-3-pro-squashfs-sysupgrade.bin",
+		"imagepath": "/ramips/mt7621/",
+		"mod": "Xiaomi-MIR3P",
+		"ext1": "-factory.bin",
+		"ext2": "-upgrade.bin",
+		"addons": ["readme.pdf", "readmerecovery.txt"]
 	}
 }
