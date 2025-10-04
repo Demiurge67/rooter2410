@@ -44,6 +44,17 @@
 		"mod": "GliNet_X3000",
 		"ext": "-upgrade.bin"
 	},
+	"MT2500": {
+		"details": "Gl.iNet MT2500",
+		"type": "1",
+		"build": "2305",
+		"package": "ext-nowifi",
+		"config": ".config_mt2500",
+		"image": "openwrt-mediatek-filogic-glinet_gl-mt2500-squashfs-sysupgrade.bin",
+		"imagepath": "/mediatek/filogic/",
+		"mod": "GliNet_MT2500",
+		"ext": "-upgrade.bin"
+	},
 	"Z8102": {
 		"details": "ZBT Z8102AX V1/V2",
 		"type": "6",
@@ -133,6 +144,19 @@
 		"mod": "Banana-Pi-R4-2.5GBPS",
 		"ext1": "-upgrade.itb",
 		"ext2": "-sdcard.img.gz"
+	},
+	"BPI3MINI": {
+		"details": "Banana Pi3 Mini",
+		"type": "2",
+		"build": "2305",
+		"config": ".config_bpi3mini",
+		"image1": "openwrt-mediatek-filogic-bananapi_bpi-r3-mini-snand-factory.bin",
+		"image2": "openwrt-mediatek-filogic-bananapi_bpi-r3-mini-squashfs-sysupgrade.itb",
+		"imagepath": "/mediatek/filogic/",
+		"mod": "Banana-Pi-R3-Mini",
+		"ext1": "-factory.bin",
+		"ext2": "-upgrade.itb",
+		"addons": ["BPiR3Mini.txt", "bpi-r3-mini.zip"]
 	},
 	"X86-64": {
 		"details": "Generic x86 64 bit",
@@ -256,5 +280,53 @@
 		"ext1": "-ext4.img",
 		"ext2": "-squashfs.img",
 		"addons": ["readme.pdf"]
+	},
+	"RASPPICM4": {
+		"details": "Raspberry Pi CM4 SD",
+		"type": "3",
+		"build": "2102",
+		"package": "ext-rooter-rasppi",
+		"config": ".config_rasppicm4",
+		"prescript": "/target/linux/bcm27xx/image/sdcard.sh sd",
+		"image1": "openwrt-bcm27xx-bcm2711-rpi-4-ext4-factory.img.gz",
+		"image2": "openwrt-bcm27xx-bcm2711-rpi-4-ext4-factory.img",
+		"image3": "openwrt-bcm27xx-bcm2711-rpi-4-squashfs-sysupgrade.img.gz",
+		"image4": "openwrt-bcm27xx-bcm2711-rpi-4-squashfs-sysupgrade.img",
+		"imagepath": "/bcm27xx/bcm2711/",
+		"mod": "RaspberryPi-CM4-SD",
+		"ext1": "-ext4.img",
+		"ext2": "-squashfs.img",
+		"addons": ["readme.pdf"]
+	},
+	"RASPPICM4USB": {
+		"details": "Raspberry Pi CM4-USB",
+		"type": "3",
+		"build": "2102",
+		"package": "ext-rooter-rasppi",
+		"config": ".config_rasppicm4",
+		"prescript": "/target/linux/bcm27xx/image/sdcard.sh usb",
+		"postscript": "/target/linux/bcm27xx/image/sdcard.sh sd",
+		"image1": "openwrt-bcm27xx-bcm2711-rpi-4-ext4-factory.img.gz",
+		"image2": "openwrt-bcm27xx-bcm2711-rpi-4-ext4-factory.img",
+		"image3": "openwrt-bcm27xx-bcm2711-rpi-4-squashfs-sysupgrade.img.gz",
+		"image4": "openwrt-bcm27xx-bcm2711-rpi-4-squashfs-sysupgrade.img",
+		"imagepath": "/bcm27xx/bcm2711/",
+		"mod": "RaspberryPi-CM4-USB",
+		"ext1": "-ext4.img",
+		"ext2": "-squashfs.img",
+		"addons": ["readme.pdf"]
+	},
+	"TR3000": {
+		"details": "Cudy TR3000",
+		"type": "2",
+		"build": "2305",
+		"config": ".config_tr3000",
+		"image1": "openwrt-mediatek-filogic-cudy_tr3000-v1-squashfs-sysupgrade.bin",
+		"image2": "openwrt-mediatek-filogic-cudy_tr3000-v1-initramfs-kernel.bin",
+		"imagepath": "/mediatek/filogic/",
+		"mod": "Cudy-TR3000",
+		"ext1": "-upgrade.bin",
+		"ext2": "-initramfs-kernel.bin",
+		"addons": ["readme.pdf", "cudy_tr3000-v1-sysupgrade.bin"]
 	}
 }
