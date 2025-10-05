@@ -66,14 +66,14 @@ wifi_config() {
 	ucode /usr/share/hostap/wifi-detect.uc
 	[ ! -f /etc/config/wireless ] && touch /etc/config/wireless
 	ucode /lib/wifi/mac80211.uc | uci -q batch
-
-	radnum=0
-	while [ true ]; do
-		channel=$(uci -q get wireless.radio$radnum.channel)
-		if [ -z "$channel" ]; then
-			break
-		fi
-		if [ ! -e /etc/wifiset ]; then
+	
+	if [ ! -e /etc/wifiset ]; then
+		radnum=0
+		while [ true ]; do
+			channel=$(uci -q get wireless.radio$radnum.channel)
+			if [ -z "$channel" ]; then
+				break
+			fi
 			if [ -e /etc/customwifi ]; then
 				I=0
 				while IFS=$'\n' read -r line
@@ -106,25 +106,21 @@ wifi_config() {
 				channel=44
 			fi
 			echo "0" > /etc/wifiset
-		else
-			channel=$(uci -q get wireless.radio$radnum.channel)
-			SSID=$(uci -q get wireless.default_radio$radnum.ssid)
-		fi
-		
-		uci set wireless.radio$radnum.channel="$channel"
-		uci set wireless.radio$radnum.disabled='0'
-		uci set wireless.radio$radnum.noscan='1'
-		uci set wireless.radio$radnum.country='US'
-		uci set wireless.radio$radnum.txpower='20'
-		
-		uci set wireless.default_radio$radnum.ssid="$SSID"
-		uci set wireless.default_radio$radnum.encryption='psk2'
-		uci set wireless.default_radio$radnum.key="$PASSW"
-		uci commit wireless
-		
-		let radnum=$radnum+1
-	done
-
+			
+			uci set wireless.radio$radnum.channel="$channel"
+			uci set wireless.radio$radnum.disabled='0'
+			uci set wireless.radio$radnum.noscan='1'
+			uci set wireless.radio$radnum.country='US'
+			uci set wireless.radio$radnum.txpower='20'
+			
+			uci set wireless.default_radio$radnum.ssid="$SSID"
+			uci set wireless.default_radio$radnum.encryption='psk2'
+			uci set wireless.default_radio$radnum.key="$PASSW"
+			uci commit wireless
+			
+			let radnum=$radnum+1
+		done
+	fi
 	for driver in $DRIVERS; do (
 		if eval "type detect_$driver" 2>/dev/null >/dev/null; then
 			eval "detect_$driver" || echo "$driver: Detect failed" >&2
