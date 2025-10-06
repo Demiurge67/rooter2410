@@ -152,7 +152,7 @@
 		"type": "1",
 		"build": "2305",
 		"config": ".config_wg1602-32",
-		"image": "openwrt-ramips-mt7621-zbtlink_zbt-wg1602-16m-squashfs-sysupgrade.bin",
+		"image": "openwrt-ramips-mt7621-zbtlink_zbt-wg1602-v04-32m-squashfs-sysupgrade.bin",
 		"imagepath": "/ramips/mt7621/",
 		"mod": "ZBT-WG1602-32",
 		"ext": "-upgrade.bin",
