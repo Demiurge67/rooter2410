@@ -1820,7 +1820,7 @@ CONFIG_PACKAGE_ath10k-board-qca988x=y
 CONFIG_PACKAGE_ath10k-board-qca9984=y
 CONFIG_PACKAGE_ath10k-board-qca99x0=y
 CONFIG_PACKAGE_ath10k-firmware-qca4019=y
-# CONFIG_PACKAGE_ath10k-firmware-qca4019-ct is not set
+CONFIG_PACKAGE_ath10k-firmware-qca4019-ct=y
 # CONFIG_PACKAGE_ath10k-firmware-qca4019-ct-full-htt is not set
 # CONFIG_PACKAGE_ath10k-firmware-qca4019-ct-htt is not set
 CONFIG_PACKAGE_ath10k-firmware-qca6174=y
@@ -2572,6 +2572,7 @@ CONFIG_PACKAGE_kmod-hinic=m
 CONFIG_PACKAGE_kmod-igb=y
 # CONFIG_PACKAGE_kmod-igbvf is not set
 CONFIG_PACKAGE_kmod-igc=y
+CONFIG_PACKAGE_kmod-iosm=m
 # CONFIG_PACKAGE_kmod-ipvlan is not set
 CONFIG_PACKAGE_kmod-ixgbe=y
 # CONFIG_PACKAGE_kmod-ixgbevf is not set
@@ -6395,7 +6396,7 @@ CONFIG_PACKAGE_uclient-fetch=y
 # CONFIG_PACKAGE_ext-gps is not set
 # CONFIG_PACKAGE_ext-logo is not set
 # CONFIG_PACKAGE_ext-menu is not set
-# CONFIG_PACKAGE_ext-mhi is not set
+CONFIG_PACKAGE_ext-mhi=y
 # CONFIG_PACKAGE_ext-multimodem is not set
 # CONFIG_PACKAGE_ext-netselect is not set
 # CONFIG_PACKAGE_ext-openwisp is not set
@@ -6440,6 +6441,7 @@ CONFIG_PACKAGE_ext-x86wifi=y
 # CONFIG_PACKAGE_axt1800 is not set
 # CONFIG_PACKAGE_b1300 is not set
 # CONFIG_PACKAGE_basic156 is not set
+# CONFIG_PACKAGE_bpir4 is not set
 # CONFIG_PACKAGE_d240 is not set
 # CONFIG_PACKAGE_dir860l is not set
 # CONFIG_PACKAGE_ext-omnia is not set
@@ -6452,7 +6454,6 @@ CONFIG_PACKAGE_ext-x86wifi=y
 # CONFIG_PACKAGE_rbsxtr is not set
 # CONFIG_PACKAGE_rd05a1 is not set
 # CONFIG_PACKAGE_rpiz2 is not set
-# CONFIG_PACKAGE_vpnpolicy is not set
 # CONFIG_PACKAGE_we826 is not set
 # CONFIG_PACKAGE_we826q is not set
 # CONFIG_PACKAGE_wg156 is not set
