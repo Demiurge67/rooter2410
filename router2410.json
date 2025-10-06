@@ -55,6 +55,29 @@
 		"mod": "GliNet_MT2500",
 		"ext": "-upgrade.bin"
 	},
+	"X1200": {
+		"details": "Gl.iNet X1200",
+		"type": "2",
+		"build": "main",
+		"config": ".config_x1200",
+		"image1": "openwrt-ath79-nand-glinet_gl-x1200-nor-nand-squashfs-sysupgrade.bin",	
+		"image2": "openwrt-ath79-nand-glinet_gl-x1200-nor-nand-squashfs-factory.img",
+		"imagepath": "/ath79/nand/",
+		"mod": "GliNet-X1200-NOR-NAND",
+		"ext1": "-upgrade.bin",
+		"ext2": "-factory.img",
+		"addons": ["readme.pdf"]
+	},
+	"MT3000": {
+		"details": "Gl.iNet MT3000",
+		"type": "1",
+		"build": "2305",
+		"config": ".config_mt3000",
+		"image": "openwrt-mediatek-filogic-glinet_gl-mt3000-squashfs-sysupgrade.bin",
+		"imagepath": "/mediatek/filogic/",
+		"mod": "GliNet_MT3000",
+		"ext": "-upgrade.bin"
+	},
 	"Z8102": {
 		"details": "ZBT Z8102AX V1/V2",
 		"type": "6",
@@ -67,6 +90,51 @@
 		"ext1": "-upgrade.bin",
 		"ext2": "-upgrade.bin"
 	},
+	"Z8109-128": {
+		"details": "ZBT Z8109-128",
+		"type": "1",
+		"build": "2305",
+		"config": ".config_z8109-128",
+		"image": "openwrt-mediatek-filogic-z8109ax-128m-squashfs-sysupgrade.bin",
+		"imagepath": "/mediatek/filogic/",
+		"mod": "ZBT-Z8109AX-128",
+		"ext": "-upgrade.bin",
+		"custom": {
+			"name": {
+				"model": "ZBT Z8109AX-128M"
+			}
+		}
+	},
+	"Z8109-512": {
+		"details": "ZBT Z8109-512",
+		"type": "1",
+		"build": "2305",
+		"config": ".config_z8109-512",
+		"image": "openwrt-mediatek-filogic-z8109ax-512m-squashfs-sysupgrade.bin",
+		"imagepath": "/mediatek/filogic/",
+		"mod": "ZBT-Z8109AX-512",
+		"ext": "-upgrade.bin",
+		"custom": {
+			"name": {
+				"model": "ZBT Z8109AX-512M"
+			}
+		}
+	},
+	"Z8105": {
+		"details": "ZBT Z8105",
+		"type": "1",
+		"build": "2305",
+		"config": ".config_z8109-128",
+		"image": "openwrt-mediatek-filogic-z8105ax-squashfs-sysupgrade.bin",
+		"imagepath": "/mediatek/filogic/",
+		"mod": "ZBT-Z8105AX",
+		"ext": "-upgrade.bin",
+		"custom": {
+			"name": {
+				"model": "ZBT Z8105AX"
+			}
+		}
+	},
 	"Z800": {
 		"details": "ZBT Z800AX",
 		"type": "2",
@@ -78,6 +146,22 @@
 		"mod": "ZBT-Z800AX",
 		"ext1": "-upgrade.bin",
 		"ext2": "-factory.bin"
+	},
+	"WG1602-32": {
+		"details": "ZBT WG1602",
+		"type": "1",
+		"build": "2305",
+		"config": ".config_wg1602-32",
+		"image": "openwrt-ramips-mt7621-zbtlink_zbt-wg1602-16m-squashfs-sysupgrade.bin",
+		"imagepath": "/ramips/mt7621/",
+		"mod": "ZBT-WG1602-32",
+		"ext": "-upgrade.bin",
+		"addons": ["readme.pdf", "readmerecovery.txt", "usb-configuration.txt"],
+		"custom": {
+			"name": {
+				"model": "WG1602-32"
+			}
+		}	
 	},
 	"WS1698": {
 		"details": "Huasifei WS1698AX",
@@ -132,6 +216,16 @@
 			},
 			"files": "/huasifei/files1698/"	
 		}
+	},
+	"WH3000": {
+		"details": "Huasifei WH3000",
+		"type": "1",
+		"build": "2305",
+		"config": ".config_wh3000",
+		"image": "openwrt-mediatek-filogic-huasifei_wh3000-squashfs-sysupgrade.bin",
+		"imagepath": "/mediatek/filogic/",
+		"mod": "Huasifei-WH3000",
+		"ext": "-upgrade.bin"
 	},
 	"BPI4": {
 		"details": "Banana Pi4",
@@ -230,6 +324,19 @@
 		"imagepath": "/mediatek/filogic/",
 		"mod": "GliNet_MT6000",
 		"ext": "-upgrade.bin"
+	},
+	"A1300": {
+		"details": "Gl.iNet A1300",
+		"type": "2",
+		"build": "2102",
+		"config": ".config_a1300",
+		"image1": "openwrt-ipq40xx-generic-glinet_gl-a1300-squashfs-sysupgrade.bin",	
+		"image2": "openwrt-ipq40xx-generic-glinet_gl-a1300-squashfs-factory.ubi",
+		"imagepath": "/ipq40xx/generic/",
+		"mod": "GliNet-A1300",
+		"ext1": "-upgrade.bin",
+		"ext2": "-factory.ubi",
+		"addons": ["readme.pdf"]
 	},
 	"WG156": {
 		"details": "ZBT WG156",
@@ -405,6 +512,21 @@
 		"ext2": "-squashfs.img",
 		"addons": ["readme.pdf"]
 	},
+	"RASPPIZ2": {
+		"details": "Raspberry Pi Zero 2 SD",
+		"type": "3",
+		"build": "2102",
+		"config": ".config_rasppiz2",
+		"image1": "openwrt-bcm27xx-bcm2710-rpi-3-ext4-sysupgrade.img.gz",
+		"image2": "openwrt-bcm27xx-bcm2710-rpi-3-ext4-sysupgrade.img",
+		"image3": "openwrt-bcm27xx-bcm2710-rpi-3-squashfs-sysupgrade.img.gz",
+		"image4": "openwrt-bcm27xx-bcm2710-rpi-3-squashfs-sysupgrade.img",
+		"imagepath": "/bcm27xx/bcm2710/", 
+		"mod": "RaspberryPi-Zero-2-SD",
+		"ext1": "-ext4.img",
+		"ext2": "-squashfs.img",
+		"addons": ["readme.pdf", "readmeSD.txt"]
+	},
 	"TR3000": {
 		"details": "Cudy TR3000",
 		"type": "2",
@@ -495,5 +617,68 @@
 		"ext1": "-factory.img",
 		"ext2": "-update.bin",
 		"addons": ["readme.pdf", "factory.txt"]
+	},
+	"TGR1900": {
+		"details": "TP-Link TGR1900",
+		"type": "2",
+		"build": "2305",
+		"config": ".config_tgr1900",
+		"image1": "openwrt-ipq806x-chromium-tplink_onhub-squashfs-sysupgrade.bin",	
+		"image2": "openwrt-ipq806x-chromium-tplink_onhub-squashfs-factory.bin",
+		"imagepath": "/ipq806x/chromium/",
+		"mod": "TP-Link-TGR1900",
+		"ext1": "-upgrade.bin",
+		"ext2": "-factory.bin",
+		"addons": ["readme.pdf"]
+	},
+	"RAX3000": {
+		"details": "CMCC RAX3000M",
+		"type": "1",
+		"build": "2305",
+		"config": ".config_rax3000",
+		"image": "openwrt-mediatek-filogic-cmcc_rax3000m-squashfs-sysupgrade.itb",
+		"imagepath": "/mediatek/filogic/",
+		"mod": "CMCC-RAX3000M",
+		"ext": "-upgrade.itb",
+		"addons": ["rax3000.zip"]
+	},
+	"MF286D": {
+		"details": "ZTE MF286D",
+		"type": "2",
+		"build": "2102",
+		"config": ".config_mf286d",
+		"image1": "openwrt-ipq40xx-generic-zte_mf286d-squashfs-sysupgrade.bin",	
+		"image2": "openwrt-ipq40xx-generic-zte_mf286d-initramfs-zImage.itb",
+		"imagepath": "/ipq40xx/generic/",
+		"mod": "ZTE-MF286D",
+		"ext1": "-upgrade.bin",
+		"ext2": "-initramfs-zImage.itb",
+		"addons": ["readme.pdf"]
+	},
+	"MF289F": {
+		"details": "ZTE MF289F",
+		"type": "2",
+		"build": "2102",
+		"config": ".config_mf289f",
+		"image1": "openwrt-ipq40xx-generic-zte_mf289f-squashfs-sysupgrade.bin",	
+		"image2": "openwrt-ipq40xx-generic-zte_mf289f-initramfs-zImage.itb",
+		"imagepath": "/ipq40xx/generic/",
+		"mod": "ZTE-MF289F",
+		"ext1": "-upgrade.bin",
+		"ext2": "-initramfs-zImage.itb",
+		"addons": ["readme.pdf"]
+	},
+	"WNDR4300": {
+		"details": "Netgear WNDR4300v1",
+		"type": "2",
+		"build": "2102",
+		"config": ".config_wndr4300",
+		"image1": "openwrt-ath79-nand-netgear_wndr4300-squashfs-factory.img",
+		"image2": "openwrt-ath79-nand-netgear_wndr4300-squashfs-sysupgrade.bin",
+		"imagepath": "/ath79/nand/",
+		"mod": "Netgear-WNDR4300v1",
+		"ext2": "-upgrade.bin",
+		"ext1": "-factory.img",
+		"addons": ["readme.pdf", "readmerecovery.txt"]
 	}
 }
