@@ -471,10 +471,10 @@ fi
 log "PDP Context : $CID  PDP Type : $IPVAR"
 ATCMDD="AT+CGDCONT=$CID,\"$IPVAR\",\"$NAPN\""
 OX=$($ROOTER/gcom/gcom-locked "/dev/ttyUSB$CPORT" "run-at.gcom" "$CURRMODEM" "$ATCMDD")
-log "$OX" 
-OX=$($ROOTER/gcom/gcom-locked "/dev/ttyUSB$CPORT" "run-at.gcom" "$CURRMODEM" "AT+CFUN=$CFUNOFF")
-OX=$($ROOTER/gcom/gcom-locked "/dev/ttyUSB$CPORT" "run-at.gcom" "$CURRMODEM" "AT+CFUN=1")
-sleep 5
+if [ "$idV" != "1199" ]; then
+	OX=$($ROOTER/gcom/gcom-locked "/dev/ttyUSB$CPORT" "run-at.gcom" "$CURRMODEM" "AT+CFUN=1")
+	sleep 5
+fi
 check_apn
 	
 APN=$NAPN
@@ -490,8 +490,8 @@ if [ 1 = 0 ]; then
 
 	exit 0
 fi	
-if [ "$idV" = "0e8d" -o "$idV" = "2cb7" ]; then
-	pdptype="ipv4"
+if [ "$idV" = "0e8d" -o "$idV" = "2cb7" -o "$idV" = "1199" ]; then
+	pdptype="ipv4v6"
 	IPVAR=$(uci -q get modem.modeminfo$CURRMODEM.pdptype)
 	case "$IPVAR" in
 		"IP" )
@@ -504,7 +504,9 @@ if [ "$idV" = "0e8d" -o "$idV" = "2cb7" ]; then
 			pdptype="ipv4v6"
 		;;
 	esac
-	pdptype="ipv4"
+	if [ "$idV" != "1199" ]; then
+		pdptype="ipv4"
+	fi
 	isplist=$apndata"000000,$NAPN,Default,$NPASS,$CID,$NUSER,$NAUTH,$pdptype"
 	if [ ! -z "$NAPN2" ]; then
 		isplist=$isplist" 000000,$NAPN2,Default,$NPASS,$CID,$NUSER,$NAUTH,$pdptype"

@@ -215,8 +215,15 @@ case "$vendor" in
 							uPid="81df"
 							uPr="T99W175"
 						else
-							log "Modem not supported"
-							exit 0
+							if [ "$subvendor" = 18d7 -a "$subdevice" = 0200 ]; then
+								uVid="1199"
+								uMa="Sierra"
+								uPid="90d3"
+								uPr="EM919x"
+							else
+								log "Modem not supported"
+								exit 0
+							fi
 						fi
 					fi
 				else
