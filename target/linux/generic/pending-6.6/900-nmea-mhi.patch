@@ -1,0 +1,44 @@
+--- a/drivers/net/wwan/mhi_wwan_ctrl.c
++++ b/drivers/net/wwan/mhi_wwan_ctrl.c
+@@ -263,6 +263,7 @@
+ 	{ .chan = "QMI", .driver_data = WWAN_PORT_QMI },
+ 	{ .chan = "DIAG", .driver_data = WWAN_PORT_QCDM },
+ 	{ .chan = "FIREHOSE", .driver_data = WWAN_PORT_FIREHOSE },
++	{ .chan = "NMEA", .driver_data = WWAN_PORT_NMEA },
+ 	{},
+ };
+ MODULE_DEVICE_TABLE(mhi, mhi_wwan_ctrl_match_table);
+
+--- a/drivers/net/wwan/wwan_core.c
++++ b/drivers/net/wwan/wwan_core.c
+@@ -327,6 +327,10 @@
+ 		.name = "XMMRPC",
+ 		.devsuf = "xmmrpc",
+ 	},
++	 [WWAN_PORT_NMEA] = {
++		 .name = "NMEA",
++		 .devsuf = "nmea",
++	},
+ };
+ 
+ static ssize_t type_show(struct device *dev, struct device_attribute *attr,
+
+--- a/include/linux/wwan.h
++++ b/include/linux/wwan.h
+@@ -16,6 +16,7 @@
+  * @WWAN_PORT_QCDM: Qcom Modem diagnostic interface
+  * @WWAN_PORT_FIREHOSE: XML based command protocol
+  * @WWAN_PORT_XMMRPC: Control protocol for Intel XMM modems
++ * @WWAN_PORT_NMEA: NMEA GPS statements interface
+  *
+  * @WWAN_PORT_MAX: Highest supported port types
+  * @WWAN_PORT_UNKNOWN: Special value to indicate an unknown port type
+@@ -28,7 +29,7 @@
+ 	WWAN_PORT_QCDM,
+ 	WWAN_PORT_FIREHOSE,
+ 	WWAN_PORT_XMMRPC,
+-
++	WWAN_PORT_NMEA,
+ 	/* Add new port types above this line */
+ 
+ 	__WWAN_PORT_MAX,

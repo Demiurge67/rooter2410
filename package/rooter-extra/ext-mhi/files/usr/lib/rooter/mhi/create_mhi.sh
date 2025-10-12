@@ -260,9 +260,15 @@ DPORT=`expr $DPORT + $BASEP`
 
 CPORT="92"
 DPORT="92"
+
 ln -fs /dev/wwan0at0 /dev/ttyUSB$CPORT
+if [ "$idV" = "413c" ]; then
+	NMEA="94"
+	ln -fs /dev/wwan0nmea0 /dev/ttyUSB$NMEA
+fi
 
 uci set modem.modem$CURRMODEM.commport=$CPORT
+uci set modem.modem$CURRMODEM.nmeaport=$NMEA
 uci set modem.modem$CURRMODEM.dataport=$DPORT
 uci set modem.modem$CURRMODEM.service=$retval
 uci commit modem
@@ -379,16 +385,16 @@ if [ -e $ROOTER/simlock.sh ]; then
 	$ROOTER/simlock.sh $CURRMODEM
 fi
 
+if [ -e /usr/lib/gps/gps.sh ]; then
+	/usr/lib/gps/gps.sh $CURRMODEM &
+fi
+
 if [ -e /tmp/simpin$CURRMODEM ]; then
 	log " SIM Error"
 	if [ -e $ROOTER/simerr.sh ]; then
 		$ROOTER/simerr.sh $CURRMODEM
 	fi
 	exit 0
-fi
-
-if [ -e /usr/lib/gps/gps.sh ]; then
-	/usr/lib/gps/gps.sh $CURRMODEM &
 fi
 
 $ROOTER/sms/check_sms.sh $CURRMODEM &

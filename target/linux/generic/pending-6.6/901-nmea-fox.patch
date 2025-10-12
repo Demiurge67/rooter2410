@@ -1,0 +1,13 @@
+--- a/drivers/bus/mhi/host/pci_generic.c
++++ b/drivers/bus/mhi/host/pci_generic.c
+@@ -385,8 +385,8 @@
+ };
+ 
+ static const struct mhi_channel_config mhi_foxconn_sdx55_channels[] = {
+-	MHI_CHANNEL_CONFIG_UL(0, "LOOPBACK", 32, 0),
+-	MHI_CHANNEL_CONFIG_DL(1, "LOOPBACK", 32, 0),
++	MHI_CHANNEL_CONFIG_UL(0, "NMEA", 32, 0),
++	MHI_CHANNEL_CONFIG_DL(1, "NMEA", 32, 0),
+ 	MHI_CHANNEL_CONFIG_UL(4, "DIAG", 32, 1),
+ 	MHI_CHANNEL_CONFIG_DL(5, "DIAG", 32, 1),
+ 	MHI_CHANNEL_CONFIG_UL(12, "MBIM", 32, 0),
