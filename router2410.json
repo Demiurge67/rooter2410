@@ -680,5 +680,31 @@
 		"ext2": "-upgrade.bin",
 		"ext1": "-factory.img",
 		"addons": ["readme.pdf", "readmerecovery.txt"]
+	},
+	"SBPRO": {
+		"details": "Beeline Smartbox Pro",
+		"type": "2",
+		"build": "2305",
+		"config": ".config_sbpro",
+		"image1": "openwrt-ramips-mt7621-beeline_smartbox-pro-squashfs-sysupgrade.bin",
+		"image2": "openwrt-ramips-mt7621-beeline_smartbox-pro-squashfs-factory.img",
+		"imagepath": "/ramips/mt7621/",
+		"mod": "Beeline-Smartbox-Pro",
+		"ext1": "-upgrade.bin",
+		"ext2": "-factory.img",
+		"addons": ["readme.pdf", "readmerecovery.txt"]
+	},
+	"MF286": {
+		"details": "ZTE MF286",
+		"type": "2",
+		"build": "2102",
+		"config": ".config_mf286",
+		"image1": "openwrt-ath79-nand-zte_mf286-initramfs-kernel.bin",
+		"image2": "openwrt-ath79-nand-zte_mf286-squashfs-sysupgrade.bin",
+		"imagepath": "/ath79/nand/",
+		"mod": "ZTE-MF286",
+		"ext2": "-upgrade.bin",
+		"ext1": "-initramfs.bin",
+		"addons": ["readme.pdf", "readmerecovery.txt"]
 	}
 }

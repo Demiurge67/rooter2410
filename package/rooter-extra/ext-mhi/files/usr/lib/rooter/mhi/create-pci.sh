@@ -209,20 +209,27 @@ case "$vendor" in
 							uPr="RM500"
 						fi
 					else
-						if [ "$subvendor" = 105b -a "$subdevice" = e0b0 ]; then
-							uVid="413c"
-							uMa="Foxconn"
-							uPid="81df"
-							uPr="T99W175"
+						if [ "$subvendor" = 17cb -a "$subdevice" = 5051 ]; then
+							uVid="2c7c"
+							uMa="Quectel"
+							uPid="0800"
+							uPr="RM505"
 						else
-							if [ "$subvendor" = 18d7 -a "$subdevice" = 0200 ]; then
-								uVid="1199"
-								uMa="Sierra"
-								uPid="90d3"
-								uPr="EM919x"
+							if [ "$subvendor" = 105b -a "$subdevice" = e0b0 ]; then
+								uVid="413c"
+								uMa="Foxconn"
+								uPid="81df"
+								uPr="T99W175"
 							else
-								log "Modem not supported"
-								exit 0
+								if [ "$subvendor" = 18d7 -a "$subdevice" = 0200 ]; then
+									uVid="1199"
+									uMa="Sierra"
+									uPid="90d3"
+									uPr="EM919x"
+								else
+									log "Modem not supported"
+									exit 0
+								fi
 							fi
 						fi
 					fi
