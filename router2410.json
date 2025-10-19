@@ -55,6 +55,17 @@
 		"mod": "GliNet_MT2500",
 		"ext": "-upgrade.bin"
 	},
+	"MT2500V2": {
+		"details": "Gl.iNet MT2500V2",
+		"type": "1",
+		"build": "2305",
+		"package": "ext-nowifi",
+		"config": ".config_mt2500v2",
+		"image": "openwrt-mediatek-filogic-glinet_gl-mt2500v2-squashfs-sysupgrade.bin",
+		"imagepath": "/mediatek/filogic/",
+		"mod": "GliNet_MT2500V2",
+		"ext": "-upgrade.bin"
+	},
 	"X1200": {
 		"details": "Gl.iNet X1200",
 		"type": "2",
