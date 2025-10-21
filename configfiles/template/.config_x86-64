@@ -1819,8 +1819,8 @@ CONFIG_PACKAGE_ath10k-board-qca9888=y
 CONFIG_PACKAGE_ath10k-board-qca988x=y
 CONFIG_PACKAGE_ath10k-board-qca9984=y
 CONFIG_PACKAGE_ath10k-board-qca99x0=y
-CONFIG_PACKAGE_ath10k-firmware-qca4019=y
-CONFIG_PACKAGE_ath10k-firmware-qca4019-ct=y
+# CONFIG_PACKAGE_ath10k-firmware-qca4019 is not set
+# CONFIG_PACKAGE_ath10k-firmware-qca4019-ct is not set
 # CONFIG_PACKAGE_ath10k-firmware-qca4019-ct-full-htt is not set
 # CONFIG_PACKAGE_ath10k-firmware-qca4019-ct-htt is not set
 CONFIG_PACKAGE_ath10k-firmware-qca6174=y
@@ -2123,7 +2123,7 @@ CONFIG_PACKAGE_kmod-crypto-hw-atmel=m
 # CONFIG_PACKAGE_kmod-crypto-hw-ccp is not set
 # CONFIG_PACKAGE_kmod-crypto-hw-hifn-795x is not set
 # CONFIG_PACKAGE_kmod-crypto-hw-padlock is not set
-CONFIG_PACKAGE_kmod-crypto-kpp=m
+CONFIG_PACKAGE_kmod-crypto-kpp=y
 CONFIG_PACKAGE_kmod-crypto-manager=y
 # CONFIG_PACKAGE_kmod-crypto-md4 is not set
 CONFIG_PACKAGE_kmod-crypto-md5=m
