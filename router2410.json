@@ -717,5 +717,15 @@
 		"ext2": "-upgrade.bin",
 		"ext1": "-initramfs.bin",
 		"addons": ["readme.pdf", "readmerecovery.txt"]
-	}
+	},
+	"WR632": {
+		"details": "Comfast WR632ax",
+		"type": "1",
+		"build": "2305",
+		"config": ".config_wr632",
+		"image": "openwrt-mediatek-filogic-comfast_cf-wr632ax-squashfs-sysupgrade.bin",
+		"imagepath": "/mediatek/filogic/",
+		"mod": "Comfast-WR632ax",
+		"ext": "-upgrade.bin"
+	}	
 }
