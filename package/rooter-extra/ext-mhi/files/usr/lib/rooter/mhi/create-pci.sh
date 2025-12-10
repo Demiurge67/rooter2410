@@ -270,7 +270,7 @@ case "$vendor" in
 		fi
 	;;
 	"$PCI_VENDOR_ID_FOXCONN" )
-		if [ "$device" = e0ab  -o "$device" = e0b0 -o "$device" = e0b1 -o "$device" = e0bf -o "$device" = e0c3  -o "$device" = e0af ]; then
+		if [ "$device" = e0ab  -o "$device" = e0b0 -o "$device" = e0b1 -o "$device" = e0bf -o "$device" = e0c3  -o "$device" = e0af -o "$device" = e11d  -o "$device" = e11e ]; then
 			uVid="413c"
 			uMa="Foxconn"
 			uPid="81df"
