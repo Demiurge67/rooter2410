@@ -184,6 +184,61 @@ foxunlock() {
 	fi
 }
 
+foxunlock65() {
+	FIRMWARE_VERSION=$(qmicli --device-open-proxy --device="$DEVICE" \
+	  --fox-get-firmware-version=firmware-mcfg \
+	  | grep "Version:" \
+	  | grep -o "'.*'" \
+	  | sed "s/'//g" \
+	  | sed -e 's/\.[^.]*\.[^.]*$//')
+	if [ -n "${FIRMWARE_VERSION}" ]; then
+		log "${FIRMWARE_VERSION}"
+		FIRMWARE_APPS_VERSION=$(qmicli --device-open-proxy --device="$DEVICE" \
+		--fox-get-firmware-version=apps \
+		| grep "Version:" \
+		| grep -o "'.*'" \
+		| sed "s/'//g")
+
+		if [ -n "${FIRMWARE_APPS_VERSION}" ]; then
+			log "${FIRMWARE_APPS_VERSION}"
+			IMEI=$(qmicli --device-open-proxy --device="$DEVICE" --dms-get-ids \
+			| grep "IMEI:" \
+			| grep -o "'.*'" \
+			| sed "s/'//g")
+
+			if [ -n "${IMEI}" ]; then
+				log "${IMEI}"
+			  SALT="$(LC_ALL=C tr -dc a-z0-9 < /dev/urandom | head -c 4)"
+			  MAGIC="FDE1"
+			  MD5=$(printf "%s%s%s%s%s" "${FIRMWARE_VERSION}" \
+				"${FIRMWARE_APPS_VERSION}" "${IMEI}" "${SALT}" "${MAGIC}" \
+				| md5sum \
+				| head -c 32)
+			  HASH="${SALT}${MD5}"
+			else
+			  log "Could not determine SDX62 IMEI"
+			fi
+		else
+			log "Could not determine SDX62 firmware apps version"
+		fi
+	else
+		log "Could not determine SDX62 firmware version"
+	fi
+	UNLOCK_RESULT=1
+	if [ -n "${HASH}" ]; then
+	  qmicli --device-open-proxy --device="$DEVICE" \
+		--fox-set-fcc-authentication="${HASH},48"
+		UNLOCK_RESULT=$?
+
+	  if [ $UNLOCK_RESULT -ne 0 ]; then
+		log "SDX62 FCC unlock failed"
+	  else
+	    log "SDX62 FCC unlock succeded"
+		return
+	  fi
+	fi
+}
+
 fcc_unlock() {
 	VENDOR_ID_HASH="3df8c719"
 	ATCMDD="at+gtfcclockgen"
@@ -367,10 +422,15 @@ if [ "$idV" = "1199" ]; then
 	$ROOTER/connect/bandmask $CURRMODEM 0
 fi
 if [ "$idV" = "413c" ]; then
-	foxunlock
+	if [ "$mod" = "DW5934e" ]; then
+		foxunlock65
+	else
+		foxunlock
+	fi
 	$ROOTER/connect/bandmask $CURRMODEM 3
 fi
 if [ "$idV" = "0e8d" ]; then
+	mod=$(uci -q get modem.modem$CURRMODEM.model)
 	fcc_unlock
 	$ROOTER/connect/bandmask $CURRMODEM 2
 fi
