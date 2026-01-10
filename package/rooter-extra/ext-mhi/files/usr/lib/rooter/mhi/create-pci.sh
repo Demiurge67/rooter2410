@@ -282,8 +282,15 @@ case "$vendor" in
 				uPid="81df"
 				uPr="DW5934e"
 			else
-				log "Foxconn not supported"
-				exit 0
+				if [ "$device" = e0f5 -o "$device" = e0f9 ]; then
+					uVid="413c"
+					uMa="Foxconn"
+					uPid="81df"
+					uPr="DW5932e"
+				else
+					log "Foxconn not supported"
+					exit 0
+				fi
 			fi
 		fi
 	;;

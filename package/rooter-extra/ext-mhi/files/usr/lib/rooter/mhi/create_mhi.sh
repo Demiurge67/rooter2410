@@ -209,7 +209,11 @@ foxunlock65() {
 			if [ -n "${IMEI}" ]; then
 				log "${IMEI}"
 			  SALT="$(LC_ALL=C tr -dc a-z0-9 < /dev/urandom | head -c 4)"
-			  MAGIC="FDE1"
+			  if [ "$mod" = "DW5934e" ]; then
+				MAGIC="FDE2"
+			  else
+				MAGIC="FDE1"
+			  fi
 			  MD5=$(printf "%s%s%s%s%s" "${FIRMWARE_VERSION}" \
 				"${FIRMWARE_APPS_VERSION}" "${IMEI}" "${SALT}" "${MAGIC}" \
 				| md5sum \
@@ -422,7 +426,8 @@ if [ "$idV" = "1199" ]; then
 	$ROOTER/connect/bandmask $CURRMODEM 0
 fi
 if [ "$idV" = "413c" ]; then
-	if [ "$mod" = "DW5934e" ]; then
+	mod=$(uci -q get modem.modem$CURRMODEM.model)
+	if [ "$mod" = "DW5934e" -o "$mod" = "DW5932e" ]; then
 		foxunlock65
 	else
 		foxunlock
@@ -430,7 +435,6 @@ if [ "$idV" = "413c" ]; then
 	$ROOTER/connect/bandmask $CURRMODEM 3
 fi
 if [ "$idV" = "0e8d" ]; then
-	mod=$(uci -q get modem.modem$CURRMODEM.model)
 	fcc_unlock
 	$ROOTER/connect/bandmask $CURRMODEM 2
 fi
