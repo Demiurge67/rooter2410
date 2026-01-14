@@ -192,7 +192,7 @@ foxunlock65() {
 	  | sed "s/'//g" \
 	  | sed -e 's/\.[^.]*\.[^.]*$//')
 	if [ -n "${FIRMWARE_VERSION}" ]; then
-		log "${FIRMWARE_VERSION}"
+		log "FIRMWARE VERSION ${FIRMWARE_VERSION}"
 		FIRMWARE_APPS_VERSION=$(qmicli --device-open-proxy --device="$DEVICE" \
 		--fox-get-firmware-version=apps \
 		| grep "Version:" \
@@ -200,20 +200,22 @@ foxunlock65() {
 		| sed "s/'//g")
 
 		if [ -n "${FIRMWARE_APPS_VERSION}" ]; then
-			log "${FIRMWARE_APPS_VERSION}"
+			log "APPS VERSION ${FIRMWARE_APPS_VERSION}"
 			IMEI=$(qmicli --device-open-proxy --device="$DEVICE" --dms-get-ids \
 			| grep "IMEI:" \
 			| grep -o "'.*'" \
 			| sed "s/'//g")
 
 			if [ -n "${IMEI}" ]; then
-				log "${IMEI}"
+				#log "${IMEI}"
 			  SALT="$(LC_ALL=C tr -dc a-z0-9 < /dev/urandom | head -c 4)"
+			  log "Salt $SALT"
 			  if [ "$mod" = "DW5934e" ]; then
 				MAGIC="FDE2"
 			  else
 				MAGIC="FDE1"
 			  fi
+			  log "Magic $MAGIC"
 			  MD5=$(printf "%s%s%s%s%s" "${FIRMWARE_VERSION}" \
 				"${FIRMWARE_APPS_VERSION}" "${IMEI}" "${SALT}" "${MAGIC}" \
 				| md5sum \
