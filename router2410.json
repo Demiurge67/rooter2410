@@ -136,7 +136,7 @@
 		"type": "1",
 		"build": "2305",
 		"config": ".config_z8109-128",
-		"image": "openwrt-mediatek-filogic-z8105ax-squashfs-sysupgrade.bin",
+		"image": "openwrt-mediatek-filogic-z8109ax-128m-squashfs-sysupgrade.bin",
 		"imagepath": "/mediatek/filogic/",
 		"mod": "ZBT-Z8105AX",
 		"ext": "-upgrade.bin",
