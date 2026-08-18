@@ -1,4 +1,4 @@
-#Owned by 
+#Owned by Vasiliy@akaDemiurge67
 #
 #Copyright GNU act.
 include $(TOPDIR)/rules.mk
