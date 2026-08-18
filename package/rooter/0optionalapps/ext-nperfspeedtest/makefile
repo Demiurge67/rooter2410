@@ -1,4 +1,4 @@
-#Owned by Demiurge67@aka
+#Owned by 
 #
 #Copyright GNU act.
 include $(TOPDIR)/rules.mk
@@ -7,13 +7,13 @@ PKG_NAME:=ext-nperfspeedtest
 PKG_VERSION:=1.000
 PKG_RELEASE:=1
 
-PKG_MAINTAINER:=Created by Demiurge67@aka
+PKG_MAINTAINER:=Created by Vasiliy@akaDemiurge67
 include $(INCLUDE_DIR)/package.mk
 
 define Package/ext-nperfspeedtest
   SECTION:=utils
   CATEGORY:=ROOter
-  DEPENDS:=+httping +curl +coreutils +coreutils-date +speedtestcpp
+  DEPENDS:=+rspeedtest
   SUBMENU:=Optional Applications
   TITLE:=support for ROOter Nperf SpeedTest
   PKGARCH:=all
