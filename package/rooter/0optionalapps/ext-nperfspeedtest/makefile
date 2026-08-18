@@ -15,14 +15,13 @@ define Package/ext-nperfspeedtest
   CATEGORY:=ROOter
   DEPENDS:=+httping +curl +coreutils +coreutils-date +speedtestcpp
   SUBMENU:=Optional Applications
-  TITLE:=support for ROOter SpeedTest
+  TITLE:=support for ROOter Nperf SpeedTest
   PKGARCH:=all
 endef
 
 define Package/ext-nperfspeedtest/description
-  Helper scripts to enable ROOter SpeedTest
+  Helper scripts to enable ROOter Nperf SpeedTest
 endef
-
 
 define Build/Compile
 endef
@@ -32,4 +31,3 @@ define Package/ext-nperfspeedtest/install
 endef
 
 $(eval $(call BuildPackage,ext-nperfspeedtest))
-
